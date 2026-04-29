@@ -1,0 +1,16 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 15 abr 2026, 8:14:49 a.m.
+    Author     : fer_g
+*/
+.vj-descatados .card{
+    height: 100%;
+}
+
+.vj-destacados .card img{
+    height: 200px;
+    object-fit: cover;
+}

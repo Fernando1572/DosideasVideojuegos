@@ -1,8 +1,8 @@
-<!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
+<!doctype html>
 <html lang="en">
     <head>
         <!-- Required meta tags -->
@@ -28,9 +28,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <div class="row">
                 <div th:each="juego : ${videojuegos}" class="col-md-3 mb-3">
                     <div class="card">
-                        <img th:src="${juego.imagenUrl}" class="card-img-top" alt="GTA">
+                        <img th:src="${juego.imagenUrl}" class="card-img-top" alt="imagen">
                         <div class="card-body">
                             <h5 th:text="${juego.nombre}" class="card-title"></h5>
+                            <p>
+                                <span class="badge bg-warning text-dark"
+                                      th:text="${juego.distribuidor != null ? juego.distribuidor.nombre : 'Sin distribuidor'}">
+                                </span>
+                            </p>
                             <p th:text="${juego.descripcion}" class="card-text"></p>                            
                         </div>
                         <div class="card-footer text-muted">
@@ -39,7 +44,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

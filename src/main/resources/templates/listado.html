@@ -18,7 +18,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <body>
         <!-- As a link -->
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" th:href="@{/}">
                 <img src="img/video_game.png" width="30" height="30" alt="Logo">
                 Tienda VJ
             </a>
@@ -32,9 +32,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <div class="card-body">
                             <h5 th:text="${juego.nombre}" class="card-title"></h5>
                             <p>
-                                <span class="badge bg-warning text-dark"
-                                      th:text="${juego.distribuidor != null ? juego.distribuidor.nombre : 'Sin distribuidor'}">
-                                </span>
+                                <a th:href="@{/videojuegosPorDistribuidor(distribuidorId=${juego.distribuidor.id})}" 
+                                   class="badge bg-warning text-dark" th:text="${juego.distribuidor.nombre}"></a>
                             </p>
                             <p th:text="${juego.descripcion}" class="card-text"></p>                            
                         </div>

@@ -16,13 +16,17 @@ import org.springframework.data.jpa.repository.Query;
  * @author fer_g
  */
 public interface VideojuegoRepository extends JpaRepository <Videojuego, Integer> {
+
     /**
-     * Retorna la lista de videjuegos ordenados por nombre
-     * @return
+     * Retorna la lista de videojuegos ordenados por nombre
+     * @return 
      */
     @Query("Select v from Videojuego v order by v.nombre")
     List<Videojuego> buscarTodos();
     
-    @Query("from Videojuego v where v.distribuidor.id =?1 order by v.nombre")
-    List<Videojuego> buscarPorDistribudorId(int ditribuidorId);
+    @Query("from Videojuego v where v.distribuidor.id = ?1 order by v.nombre")
+    List<Videojuego> buscarPorDistribuidor(int distribuidorId);
+    
+    @Query("from Videojuego v where v.nombre like %?1%")
+    List<Videojuego> buscar(String consulta);
 }

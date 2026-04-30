@@ -22,17 +22,27 @@ public class VideojuegoService {
     public VideojuegoService(VideojuegoRepository videojuegoRepository) {
         this.videojuegoRepository = videojuegoRepository;
     }
-
-    public List<Videojuego> buscarDestacados() {
+    
+    public List<Videojuego> buscarDestacados(){
         return videojuegoRepository.buscarTodos();
     }
     
     /**
      * Retorna una lista de videojuegos por id. del distribuidor
      * @param distribuidorId
-     * @return
+     * @return 
      */
-    public List<Videojuego> buscarPorDistribuidor(int distribuidorId) {
-        return videojuegoRepository.buscarPorDistribudorId(distribuidorId);
+    public List<Videojuego> buscarPorDistribuidor(int distribuidorId){
+        return videojuegoRepository.buscarPorDistribuidor(distribuidorId);
+    }
+    
+    /**
+     * Realiza una consulta a la bd para buscar
+     * videojuegos por nombre
+     * @param consulta
+     * @return 
+     */
+    public List<Videojuego> buscar(String consulta){
+        return videojuegoRepository.buscar(consulta);
     }
 }
